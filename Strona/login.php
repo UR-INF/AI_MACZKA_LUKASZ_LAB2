@@ -29,7 +29,7 @@
 					Nie posiadasz konta?<a href="index.php?page=register">Zarejestruj się</a>
 				</div>
 				<div class="d-flex justify-content-center links">
-					<a href="#">Zapomniałeś hasła?(NOT IMPLEMENTED YET)</a>
+					<a href="index.php?page=password_forgot">Zapomniałeś hasła?</a>
 				</div>
 			</div>
 		</div>

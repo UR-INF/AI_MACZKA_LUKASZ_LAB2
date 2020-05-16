@@ -36,18 +36,20 @@
 <body>
     <?php
     session_start();
-    try{
-        if($_SESSION["zalogowany"]==true)
-        $current_page = 'logowanie';
-    } 
-    catch (Exception $e){
-           
-    }
-        $current_page = isset($_GET['page']) ? $_GET['page'] : null; 
+    
+        //$current_page = isset($_GET['page']) ? $_GET['page'] : null; 
+        if(isset($_SESSION["zalogowany"])==true){
+            if($_SESSION["zalogowany"]==true)
+            $current_page = 'main';
+        }else{
+            $current_page = isset($_GET['page']) ? $_GET['page'] : null;
+        }
+
+        
 		switch ($current_page) 
 		{
 			case 'login':
-			default:
+                default;
 				include 'login.php';
 				break;
 			case 'logowanie':
@@ -61,6 +63,12 @@
 				break;
             case 'main':
                 include 'main.php';
+                break;
+            case 'password_forgot':
+                include 'password_forgot.php';
+                break;
+            case 'password_reset':
+                include 'password_reset.php';
                 break;
         }
 		

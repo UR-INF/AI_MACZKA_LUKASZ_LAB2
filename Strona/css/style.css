@@ -63,6 +63,18 @@ input:focus{
     background-color: #3746A5;
 }
 
+.logout_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 120px;
+    margin: 0px !important;
+}
+
+.logout_btn:hover{
+    color: white;
+    background-color: #3746A5;
+}
+
 .links{
     color: white;
 }
