@@ -28,7 +28,7 @@ if (isset($_POST['resetuj']))
     $haslo1 = filtruj($_POST['haslo1']);
     $haslo2 = filtruj($_POST['haslo2']);
     $level = filtruj($_POST['level']);
-    
+
     // sprawdzamy czy nie podano pustych danych
     if (
         (isset($nick)&&strlen($nick)!=0&&strlen($nick)<=32 )  && 
@@ -46,94 +46,94 @@ if (isset($_POST['resetuj']))
                 $level_z_bazy=$row['level_trenera'];
                 if($level_z_bazy == $level)
                 {
-                    
+
                     $sql = "UPDATE trenerzy SET haslo_trenera='".md5($haslo1)."' WHERE nick_trenera='".$nick."'";
 
                     if ($conn->query($sql) === TRUE) {
-                        
+
                     } else {
                         echo "Error updating record: " . $conn->error;
                     }
-                
-                ?>
+
+?>
 <div class="login_container">
-	<div class="d-flex justify-content-center h-100">
-		<div class="registered_card">
-			Hasło zostało zresetowane!<br>
-			Przekierowanie na stronę logowania nastąpi za: <span id="countdowntimer">5 </span> sekundy.
-		</div>
-	</div>
+    <div class="d-flex justify-content-center h-100">
+        <div class="registered_card">
+            Hasło zostało zresetowane!<br>
+            Przekierowanie na stronę logowania nastąpi za: <span id="countdowntimer">5 </span> sekundy.
+        </div>
+    </div>
 </div>
 
-                    <script type="text/javascript">
-                    var timeleft = 5;
-                    var downloadTimer = setInterval(function(){
-                    timeleft--;
-                    document.getElementById("countdowntimer").textContent = timeleft;
-                    if(timeleft <= 0)
-                        clearInterval(downloadTimer);
-                    },1000);
-                    </script>
-                <?php    
-                header( "refresh:5;url=index.php?page=login"); 
+<script type="text/javascript">
+    var timeleft = 5;
+    var downloadTimer = setInterval(function(){
+        timeleft--;
+        document.getElementById("countdowntimer").textContent = timeleft;
+        if(timeleft <= 0)
+            clearInterval(downloadTimer);
+    },1000);
+</script>
+<?php    
+                    header( "refresh:5;url=index.php?page=login"); 
                 }else
                 {
-                    ?>
-                <div class="login_container">
-	               <div class="d-flex justify-content-center h-100">
-		              <div class="registered_card">
-			             Weryfikacja nie powiodła się
-		              </div>
-	               </div>
-                </div>
+?>
+<div class="login_container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="registered_card">
+            Weryfikacja nie powiodła się
+        </div>
+    </div>
+</div>
 
-                <?php    
-                header( "refresh:2;url=index.php?page=password_forgot");
+<?php    
+                    header( "refresh:2;url=index.php?page=password_forgot");
                 }
-                
+
             }
             else {
-                ?>
-                <div class="login_container">
-	               <div class="d-flex justify-content-center h-100">
-		              <div class="registered_card">
-			             Hasła się nie zgadzają
-		              </div>
-	               </div>
-                </div>
+?>
+<div class="login_container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="registered_card">
+            Hasła się nie zgadzają
+        </div>
+    </div>
+</div>
 
-                <?php    
+<?php    
                 header( "refresh:2;url=index.php?page=password_forgot");
             }
         }
         else {
-                ?>
-                <div class="login_container">
-	               <div class="d-flex justify-content-center h-100">
-		              <div class="registered_card">
-			             Podany nick nie istnieje
-		              </div>
-	               </div>
-                </div>
+?>
+<div class="login_container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="registered_card">
+            Podany nick nie istnieje
+        </div>
+    </div>
+</div>
 
-                <?php    
-                header( "refresh:2;url=index.php?page=password_forgot");
-            }
+<?php    
+            header( "refresh:2;url=index.php?page=password_forgot");
+        }
     }
     else {
-                ?>
-                <div class="login_container">
-	               <div class="d-flex justify-content-center h-100">
-		              <div class="registered_card">
-			             Przekroczono limit znaków <br>
-                              
-		              </div>
-	               </div>
-                </div>
+?>
+<div class="login_container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="registered_card">
+            Przekroczono limit znaków <br>
 
-                <?php    
-                header( "refresh:2;url=index.php?page=password_forgot");
-            }
-    
+        </div>
+    </div>
+</div>
+
+<?php    
+        header( "refresh:2;url=index.php?page=password_forgot");
+    }
+
 }
 ?>

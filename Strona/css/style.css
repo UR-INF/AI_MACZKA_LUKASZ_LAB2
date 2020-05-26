@@ -6,10 +6,13 @@ html,body{
 /*===LOGIN===*/
 .login_container{
     background-image: url('../img/pogo_bg.jpg');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
     align-content: center;
+    min-width: 1050px;
 }
 .card{
     height: 370px;
@@ -28,6 +31,12 @@ html,body{
     margin-bottom: auto;
     width: 800px;
     background-color: rgba(0,0,0,0.95) !important;
+}
+.edit_profile_card{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 800px;
 }
 .registered_card{
     height: auto;
@@ -87,10 +96,9 @@ input:focus{
 .links a:hover{
     color: #3746FF;
 }
-.chat{
-    float: left;
-    margin: 0px;
-    padding-left: 5px;
+.header_main{
+    text-align: center;
+    font-size: 35px;
 }
 .spacer{
     height: 10px;
@@ -117,10 +125,79 @@ input:focus{
     width:140px;
     margin 5px;
     text-align: center;
-    
+
 }
 #card_main_top_element_button{
     width:120px;
     margin 5px;
     text-align: center;
+}
+.card_main_top_element{
+    margin 5px;
+    text-align: center;
+}
+wybor_druzyny_container{
+    width: 100%;
+}
+.team_text{
+    background-color: rgba(0,0,0,0.95) !important;
+    border-radius: 50%;
+    padding-top: 5px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+.team_thanks{
+    width: 100% !important;
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    border-right: none !important;
+}
+.team_valor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/Team_Valor.png") !important;
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    width: 33.33%;
+    border-right: 1px solid antiquewhite;
+    float: left;
+}
+.wybor_druzyny_container .team_valor:hover{
+    background-color: dimgrey;
+    color: red;
+}
+.team_mystic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/Team_Mystic.png") !important;
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    width: 33.33%;
+    border-right: 1px solid antiquewhite;
+    float: left;
+}
+.wybor_druzyny_container .team_mystic:hover{
+    background-color: dimgrey;
+    color: blue;
+}
+.team_instinct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/Team_Instinct.png") !important;
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    width: 33.33%;
+    float: left;
+}
+.wybor_druzyny_container .team_instinct:hover{
+    background-color: dimgrey;
+    color: yellow;
 }
