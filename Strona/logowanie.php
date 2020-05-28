@@ -31,8 +31,11 @@ if (isset($_POST['loguj']))
     if (mysqli_num_rows(mysqli_query($conn, "SELECT nick_trenera, haslo_trenera FROM trenerzy WHERE nick_trenera = '".$nick."' AND haslo_trenera = '".md5($haslo)."';")) > 0)
     {
         $query=mysqli_query($conn,"SELECT * FROM trenerzy WHERE nick_trenera = '".$nick."';");
-        
         $row=mysqli_fetch_array($query);
+        $query1=mysqli_query($conn,"SELECT * FROM przedmioty WHERE id_przedmiotu = '".$row['id_przedmiotu']."';");
+        
+        
+        $row1=mysqli_fetch_array($query1);
         
         $id_trener=$row['id_trenera'];
         $imie=$row['imie_trenera'];
@@ -40,6 +43,7 @@ if (isset($_POST['loguj']))
         $level=$row['level_trenera'];
         $druzyna=$row['id_druzyny'];
         $przedmiot=$row['id_przedmiotu'];
+        $nazwa_przedmiotuu=$row1['nazwa_przedmiotu'];
         
         if($druzyna == null){
             $druzyna = "Nie wybrano";
@@ -60,7 +64,8 @@ if (isset($_POST['loguj']))
         $_SESSION["level"] = $level;
         $_SESSION["druzyna"] = $druzyna;
         $_SESSION["przedmiot"] = $przedmiot;
-
+        $_SESSION["przedmiotek"] = $nazwa_przedmiotuu;
+        
         $_SESSION["zalogowany"] = true;
         $_SESSION["nick"] = $nick;
         header('Location: index.php?page=main');

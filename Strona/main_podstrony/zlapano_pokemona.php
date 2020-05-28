@@ -12,6 +12,8 @@ $conn = mysqli_connect ($host, $dbusername, $dbpassword, $dbname);
 
 if (isset($_POST['zlap_pokemona']))
 {
+    $_SESSION["level"]++;
+    mysqli_query($conn,"UPDATE trenerzy SET level_trenera = '".$_SESSION["level"]."' WHERE id_trenera='".$_SESSION['id_trener']."';");
     $posiadane_cp = rand(10,$_POST['max_cp']);
     $sql="INSERT INTO posiadanie (id_trenera, id_pokemona, posiadane_cp) VALUES ('".$_SESSION['id_trener']."','".$_POST['id_poksa']."','".$posiadane_cp."');";
 

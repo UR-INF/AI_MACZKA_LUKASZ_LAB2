@@ -58,8 +58,16 @@
                     <input type="submit" value="Zmień hasło" name="zmien_haslo"
                            class="btn login_btn btn-block">
                 </form>
+                <br><br><br><br><br><br>
+                <form method="POST" action="index.php?page=usun_konto">
+                    
+                    <input type="submit" value="USUN KONTO" name="usun_konto" id="usun_konto"
+                           class="btn login_btn btn-block" style="background-color:darkred; "disabled>
+                    <p><center><input type="checkbox"  onchange="document.getElementById('usun_konto').disabled = !this.checked;" /> Jestem świadomy że to usunie moje konto nieodwracalnie </center></p>
+                    
+                </form>
             </div>
 
-        
+
+        </div>
     </div>
-</div>

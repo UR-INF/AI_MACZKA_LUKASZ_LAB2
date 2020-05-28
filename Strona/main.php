@@ -2,7 +2,7 @@
 if(!isset($_SESSION)) 
 { 
     session_start(); 
-} ?>
+}?>
 <div class="login_container">
     <div class="spacer"></div>
     <div class="row card_main_top" style="height:60px; width:100%"> 
@@ -17,10 +17,12 @@ if(!isset($_SESSION))
             Level:<br>  <?php if(isset($_SESSION["level"])){echo $_SESSION["level"];} ?>     
         </div>
         <div class="col card_main_top_element">
-            Drużyna:<br>    <?php if(isset($_SESSION["druzyna"])){echo $_SESSION["druzyna"];} ?>     
+            Drużyna:<br>    <?php if(isset($_SESSION["druzyna"])){
+        echo ''.$_SESSION["druzyna"]." <img src='../img/items/".$_SESSION["druzyna"].".png' style='height:16px;width:16px;'/>";} ?>     
         </div>
         <div class="col card_main_top_element">
-            Przedmiot:<br>  <?php if(isset($_SESSION["przedmiot"])){echo $_SESSION["przedmiot"];} ?>     
+            Przedmiot:<br>  <?php if(isset($_SESSION["przedmiot"])){
+    echo ''.$_SESSION["przedmiotek"]." <img src='../img/items/".$_SESSION["przedmiot"].".png' style='height:16px;width:16px;'/>";} ?>     
         </div>
 
 
@@ -32,7 +34,7 @@ if(!isset($_SESSION))
             </center> 
         </div>
         <div id="card_main_top_element_button">
-            <form action="main.php" method="post">
+            <form action="index.php?page=main.php" method="post">
                 <input type="submit" name="logout" value="Wyloguj się" class="btn logout_btn"/>
             </form>
         </div>
@@ -49,7 +51,7 @@ if(!isset($_SESSION))
                         <a href="index.php?page=lapanie_pokemona">Łapanie Pokemona</a><br><br>
                         <a href="index.php?page=zlapane_pokemony">Złapane Pokemony</a><br><br>
                         <a href="index.php?page=zaatakuj_areny">Zaatakuj Areny</a><br><br>
-                        <a href="index.php?page=wybierz_druzyne">Wybierz Druzyne</a><br><br>
+                        <a href="index.php?page=wybierz_druzyne">Wybierz Drużyne</a><br><br>
                         <a href="index.php?page=wybierz_przedmiot">Wybierz Przedmiot</a><br><br>
                         <a href="index.php?page=edytuj_profil">Edytuj Profil</a><br><br>
                     </center>
@@ -88,6 +90,18 @@ if(!isset($_SESSION))
                             include $_SERVER['DOCUMENT_ROOT'].'/main_podstrony/zaatakuj_areny.php';
                             break;
                             
+                        case 'atak_na_swoja_arene':
+                            include $_SERVER['DOCUMENT_ROOT'].'/main_podstrony/atak_na_swoja_arene.php';
+                            break;
+                            
+                        case 'za_niski_level':
+                            include $_SERVER['DOCUMENT_ROOT'].'/main_podstrony/za_niski_level.php';
+                            break;
+                            
+                        case 'przejeto_arene':
+                            include $_SERVER['DOCUMENT_ROOT'].'/main_podstrony/przejeto_arene.php';
+                            break;
+                        
                         case 'wybierz_druzyne':
                             include $_SERVER['DOCUMENT_ROOT'].'/main_podstrony/wybierz_druzyne.php';
                             break;
@@ -107,15 +121,25 @@ if(!isset($_SESSION))
                         case 'wybierz_przedmiot':
                             include $_SERVER['DOCUMENT_ROOT'].'/main_podstrony/wybierz_przedmiot.php';
                             break;
+                            
+                        case 'wybrano_przedmiot':
+                            include $_SERVER['DOCUMENT_ROOT'].'/main_podstrony/wybrano_przedmiot.php';
+                            break;
 
                         case 'edytuj_profil':
                             include $_SERVER['DOCUMENT_ROOT'].'/main_podstrony/edytuj_profil.php';
                             break;
+                            
                         case 'edycja_profilu':
                             include $_SERVER['DOCUMENT_ROOT'].'/main_podstrony/edycja_profilu.php';
                             break;
+                            
                         case 'zmiana_hasla':
                             include $_SERVER['DOCUMENT_ROOT'].'/main_podstrony/zmiana_hasla.php';
+                            break;
+                            
+                        case 'usun_konto':
+                            include $_SERVER['DOCUMENT_ROOT'].'/main_podstrony/usun_konto.php';
                             break;
                     }
                     ?>
@@ -131,10 +155,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['logout']))
 }
 function func()
 {
-
     session_destroy();
     redirect('index.php?page=login');
-    //header( 'Location: index.php?page=login');
     exit;    
 }
 function redirect($url)
