@@ -49,9 +49,9 @@ if (isset($_POST['edytuj_profil']))
                 $_SESSION["nick"] = $nick;
 ?>
 <div class="card-body links"> 
-    <div class="card-header header_main">
+    <div class="card-header header_main end_alert">
         Dane zostały zmienione!<br>
-        <a href="index.php?page=edytuj_profil">Powrót</a>
+        <a href="index.php?page=edytuj_profil" class="btn logout_btn" style="width:auto;">Powrót</a>
     </div>
 </div>
 <?php
@@ -70,9 +70,9 @@ if (isset($_POST['edytuj_profil']))
 
 ?>
 <div class="card-body links"> 
-    <div class="card-header header_main">
+    <div class="card-header header_main end_alert">
         Dane zostały zmienione!<br>
-        <a href="index.php?page=edytuj_profil">Powrót</a>
+        <a href="index.php?page=edytuj_profil" class="btn logout_btn" style="width:auto;">Powrót</a>
     </div>
 </div>
 <?php
@@ -81,18 +81,18 @@ if (isset($_POST['edytuj_profil']))
                 }
     }else{        
 ?>
-                <div class="card-header header_main">
+                <div class="card-header header_main end_alert">
                     Podany nick jest zajęty!<br>
-                    <a href="index.php?page=edytuj_profil">Powrót</a>
+                    <a href="index.php?page=edytuj_profil" class="btn logout_btn" style="width:auto;">Powrót</a>
                     </div>
                     <?php    
             }
         }
         }else {
 ?>
-<div class="card-header header_main">
+<div class="card-header header_main end_alert">
     Przekroczono limit znaków!<br>
-    <a href="index.php?page=edytuj_profil">Powrót</a>
+    <a href="index.php?page=edytuj_profil" class="btn logout_btn" style="width:auto;">Powrót</a>
 </div>
 <?php
         }

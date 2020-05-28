@@ -34,6 +34,7 @@ if (isset($_POST['loguj']))
         
         $row=mysqli_fetch_array($query);
         
+        $id_trener=$row['id_trenera'];
         $imie=$row['imie_trenera'];
         $nazwisko=$row['nazwisko_trenera'];
         $level=$row['level_trenera'];
@@ -53,6 +54,7 @@ if (isset($_POST['loguj']))
         if($przedmiot == null){
             $przedmiot = "Brak przedmiotu";
         }
+        $_SESSION["id_trener"] = $id_trener;
         $_SESSION["imie"] = $imie;
         $_SESSION["nazwisko"] = $nazwisko;
         $_SESSION["level"] = $level;

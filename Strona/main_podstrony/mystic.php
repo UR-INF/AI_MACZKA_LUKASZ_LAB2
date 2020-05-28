@@ -13,13 +13,20 @@ if ($conn->query($sql) === TRUE) {
 }
 ?>
 <div class="team_mystic team_thanks">
-    <?php
-    $query=mysqli_query($conn,"SELECT * FROM druzyny WHERE nazwa_druzyny = '".$_SESSION["druzyna"]."';");
+    <div class="team_text team_thanks" style="height:auto;color:blue;">
+        <div style="font-size:35px;">Dziękujemy za wybór drużyny Mystic!</div>
+        <br>
+        <?php
+        $query=mysqli_query($conn,"SELECT * FROM druzyny WHERE nazwa_druzyny = '".$_SESSION["druzyna"]."';");
 
-    $row=mysqli_fetch_array($query);
-    $opis_druzyny=$row['opis_druzyny'];
-    echo $opis_druzyny;
-    ?>
+        $row=mysqli_fetch_array($query);
+        $opis_druzyny=$row['opis_druzyny'];
+        echo $opis_druzyny;
+        ?>
+        <br>
+        <a href="index.php?page=wybierz_druzyne" class="btn logout_btn" style="width:auto;">Zmień wybór drużyny</a>
+        <a href="index.php?page=zlapane_pokemony" class="btn logout_btn" style="width:auto;">Powrót do swojej kolekcji</a>
+    </div>
 </div>
 <script>
     window.onload = function() {

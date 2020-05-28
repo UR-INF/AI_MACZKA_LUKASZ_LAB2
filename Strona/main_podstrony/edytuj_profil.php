@@ -1,4 +1,4 @@
-<div class="login_container">
+<div class="login_container" style="min-width:0px;">
     <div class="d-flex col-xs-12 col-sm-12 col-md-10 col-sm-offset-1 col-md-offset-1 justify-content-center h-100">
         <div class="edit_profile_card">
             <div class="card-header">

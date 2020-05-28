@@ -37,9 +37,9 @@ if (isset($_POST['zmien_haslo']))
 
                     if ($conn->query($sql) === TRUE) {
                     ?>
-<div class="card-header header_main">
+<div class="card-header header_main end_alert">
     Hasło zostało zmienione!<br>
-    <a href="index.php?page=edytuj_profil">Powrót</a>
+    <a href="index.php?page=edytuj_profil" class="btn logout_btn" style="width:auto;">Powrót</a>
 </div>
                     <?php
                     } else {
@@ -47,17 +47,17 @@ if (isset($_POST['zmien_haslo']))
                     }
             }else{
 ?>
-<div class="card-header header_main">
+<div class="card-header header_main end_alert">
     Hasła się nie zgadzają!<br>
-    <a href="index.php?page=edytuj_profil">Powrót</a>
+    <a href="index.php?page=edytuj_profil" class="btn logout_btn" style="width:auto;">Powrót</a>
 </div>
 <?php
             }
         }else{
 ?>
-<div class="card-header header_main">
+<div class="card-header header_main end_alert">
     Podano błędne stare hasło!<br>
-    <a href="index.php?page=edytuj_profil">Powrót</a>
+    <a href="index.php?page=edytuj_profil" class="btn logout_btn" style="width:auto;">Powrót</a>
 </div>
 <?php
         }
