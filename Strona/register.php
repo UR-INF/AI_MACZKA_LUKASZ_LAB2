@@ -48,7 +48,7 @@
                            class="btn login_btn btn-block">
                     <br>
                     <div class="d-flex justify-content-center links">
-                        <a href="index.php?page=login" class="btn logout_btn" style="width:auto;">Powrót do logowania</a>
+                        <a href="index.php?page=login" class="btn logout_btn" style="width:auto;color:black;">Powrót do logowania</a>
                     </div>
                 </form>
             </div>

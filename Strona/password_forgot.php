@@ -26,7 +26,7 @@
                             </div>
                         </div>
                     </div>                   
-                    <center><h3 style="color:white">Dla potwierdzenia wpisz swój level</h3></center>
+                    <center><h4 style="color:white">Dla potwierdzenia wpisz swój level</h4></center>
                     <div class="row">
                         <div class="col-xs-4 col-sm-4 col-md-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4">
                             <div class="form-group">
@@ -39,7 +39,7 @@
                            class="btn login_btn btn-block">
                     <br>
                     <div class="d-flex justify-content-center links">
-                        <a href="index.php?page=login" class="btn logout_btn" style="width:auto;">Powrót do logowania</a>
+                        <a href="index.php?page=login" class="btn logout_btn" style="width:auto;color:black;">Powrót do logowania</a>
                     </div>
                 </form>
             </div>

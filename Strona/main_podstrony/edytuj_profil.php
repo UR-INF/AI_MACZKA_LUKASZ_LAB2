@@ -14,19 +14,19 @@
                         </div>
                         <div class="col-xs-4 col-sm-4 col-md-4">
                             <div class="form-group">
-                                <input type="text" name="nazwisko" id="register_form" class="form-control input-md" placeholder="Nazwisko" value="<?php if(isset($_SESSION["imie"])){echo $_SESSION["nazwisko"];} ?>" required>
+                                <input type="text" name="nazwisko" id="register_form" class="form-control input-md" placeholder="Nazwisko" value="<?php if(isset($_SESSION["nazwisko"])){echo $_SESSION["nazwisko"];} ?>" required>
                             </div>
                         </div>
                         <div class="col-xs-4 col-sm-4 col-md-4">
                             <div class="form-group">
-                                <input type="text" name="nick" id="register_form" class="form-control input-md" placeholder="Nick" value="<?php if(isset($_SESSION["imie"])){echo $_SESSION["nick"];} ?>" required>
+                                <input type="text" name="nick" id="register_form" class="form-control input-md" placeholder="Nick" value="<?php if(isset($_SESSION["nick"])){echo $_SESSION["nick"];} ?>" required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-4 col-sm-4 col-md-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4">
                             <div class="form-group">
-                                <input type="number" name="level" id="register_form" class="form-control input-md" placeholder="Level" value="<?php if(isset($_SESSION["imie"])){echo $_SESSION["level"];} ?>" required>
+                                <input type="number" name="level" id="register_form" class="form-control input-md" placeholder="Level" value="<?php if(isset($_SESSION["level"])){echo $_SESSION["level"];} ?>" required>
                             </div>
                         </div>
                     </div>
